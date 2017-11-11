@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Jacob Janak</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/files.css" />
+</head>
+<body>
+
+  <div class="icon">
+    <img id="my-computer" src="images/my-computer.jpg" alt="my computer" />
+    <p><span>My Computer</span></p>
+  </div>
+
+  <div class="icon">
+    <img id="trash" src="images/trash.jpg" alt="recycle bin" />
+    <p><span>Recycle Bin</span></p>
+  </div>
+
+  <div class="icon">
+    <img id="readme" class="text-file" src="images/text-file.png" alt="readme" />
+    <p><span>ReadMe</span></p>
+  </div>
+
+  <a class="icon"> <!-- href="" download> -->
+    <img id="resume" src="images/resume.png" alt="resume" />
+    <p><span>Resume</span></p>
+  </a>
+
+  <div class="icon">
+    <img id="projects" class="folder" src="images/folder.png" alt="folder" />
+    <p><span>Jake's Projects</span></p>
+  </div>
+
+  <!-- <div draggable="true" class="drag" data-item="0">One</div>
+  <div draggable="true" class="drag second" data-item="1">Two</div> -->
+
+  <div id="projects-folder" class="window drag" draggable="true" data-item="0">
+    <div class="border-1">
+      <div class="border-2">
+        <div class="border-3">
+          <div class="blue-stripe">
+            <img class="document-logo" src="images/folder.png" alt="document" />
+            <p class="blue-stripe-text">
+              Jake's Projects
+            </p>
+            <img id="projects-x-button" class="x-button" src="images/x-button.jpg" alt="close button" />
+          </div>
+          <ul class="document-menu">
+            <li><u>F</u>ile</li>
+            <li><u>E</u>dit</li>
+            <li><u>V</u>iew</li>
+            <li><u>H</u>elp</li>
+          </ul>
+
+          <div class="border-4">
+            <div class="border-5">
+              <div class="folder-contents">
+
+                <a href="abra.jacobjanak.com" target="_blank">
+                  <div class="icon">
+                    <img id="link-abra" src="images/link.png" alt="abra.jacobjanak.com" />
+                    <p><span>Abra</span></p>
+                  </div>
+                </a>
+
+                <a href="https://www.monikavitekceramics.herokuapp.com" target="_blank">
+                  <div class="icon">
+                    <img id="link-ceramics" src="images/link.png" alt="monikavitekceramics.herokuapp.com" />
+                    <p><span>Monika Vitek Ceramics</span></p>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-bottom-bar">
+            <div class="item-count">
+              2 object(s)
+            </div>
+            <div class="byte-count">
+              8 bytes
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="readme-document" class="window drag" draggable="true" data-item="1">
+    <div class="border-1">
+      <div class="border-2">
+        <div class="border-3">
+          <div class="blue-stripe">
+            <img class="document-logo" src="images/text-file.png" alt="document" />
+            <p class="blue-stripe-text">
+              ReadMe - Notepad
+            </p>
+            <img id="readme-x-button" class="x-button" src="images/x-button.jpg" alt="close button" />
+          </div>
+          <ul class="document-menu">
+            <li><u>F</u>ile</li>
+            <li><u>E</u>dit</li>
+            <li><u>S</u>earch</li>
+            <li><u>H</u>elp</li>
+          </ul>
+
+          <div class="border-4">
+            <div class="border-5">
+              <textarea id="readme-textarea">
+Welcome to my Windows-95-themed portfolio!
+
+Everything you see on this webpage is 100% made by yours truly, with the exception of the icons.
+
+This page contains links to all my other projects as well as my downloadable resume.
+              </textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="error" class="window drag" draggable="true" data-item="2">
+    <div class="border-1">
+      <div class="border-2">
+        <div class="border-3">
+          <div class="blue-stripe">
+            <p id="error-title" class="blue-stripe-text">
+              <!-- Empty -->
+            </p>
+            <img id="error-x-button" class="x-button" src="images/x-button.jpg" alt="close button" />
+          </div>
+
+          <div id="error-container">
+            <img id="error-icon" src="images/error.jpg" alt="error" />
+            <p id="error-text">
+              <!-- Empty -->
+            </p>
+
+            <div id="buttons">
+              <img id="retry" src="images/retry.jpg" alt="retry" />
+              <img id="cancel" src="images/cancel.jpg" alt="cancel" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dock">
+    <img id="start-button" src="images/start-button.jpg" alt="start button" />
+    <div id="clock">
+      <img id="volume" src="images/volume.jpg" alt="volume" />
+      <div id="time"><!-- Empty --></div>
+    </div>
+  </div>
+
+  <audio id="startup-sound" src="startup.mp3"></audio>
+
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="script.js"></script>
+  <script src="draggable.js"></script>
+</body>

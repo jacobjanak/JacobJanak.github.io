@@ -1,0 +1,112 @@
+body {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding-top: 12px;
+  background-color: #4DAAA9;
+
+  /* Font */
+  font-family: Arial, Helvetica, sans-serif;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  font-size: 14px;
+  color: white;
+}
+p {
+  margin: 0;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Desktop icons */
+.icon {
+  display: block;
+  margin-left: 12px;
+  height: 90px;
+  width: 100px;
+}
+.icon > img {
+  margin-left: 26px; /* ( .icon width - img width ) divided by 2 */
+  height: 48px;
+  width: 48px;
+}
+.icon > img:hover {
+  cursor: pointer;
+}
+.icon > p {
+  text-align: center;
+}
+p > span {
+  padding: 0 2px;
+}
+p.selected > span {
+  background-color: #0311A3;
+  color: white;
+  border: 1px dotted white;
+}
+
+.folder, .text-file {
+  /* these images appear wider than the others */
+  margin-left: 28px !important;
+  width: 44px !important;
+}
+
+/* Windows */
+.window {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* transform: translate(-50%, -50%); */
+  width: 500px;
+  height: 300px;
+  background-color: white;
+}
+/* ... rest is in seperate files for cleanliness */
+
+
+/* Dock (bottom bar) */
+#dock {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30px; /* 150% regular size */
+  padding: 2px 4px; /* most browsers have rounded corners */
+  background-color: #C3C7CB; /* C3C3C3 */
+  border-top: 2px solid white;
+  z-index: 10000;
+}
+#start-button {
+  height: 100%;
+  width: auto;
+}
+#start-button:hover {
+  cursor: pointer;
+}
+#clock {
+  height: 26px; /* same as calc(100% - padding) */
+  float: right;
+  width: 72px;
+  border-top: 1px solid #868A8E;
+  border-left: 1px solid #868A8E;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+#volume {
+  margin: 2px 0 3px;
+  height: calc(100% - 5px);
+}
+#time {
+  float: right;
+  margin-right: 8px;
+  height: 26px;
+  line-height: 26px;
+  color: black;
+  font-size: 14px;
+}

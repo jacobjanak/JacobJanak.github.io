@@ -1,5 +1,8 @@
 $(function() {
 
+  /* var to determine if user can double click or not */
+  var dblClickMobile = screen.width > 900 ? 'dblclick' : 'click';
+
   function updateClock() {
     let time = new Date();
     let secsTillNextMin = 60 - time.getSeconds(); // for efficiency
@@ -97,30 +100,28 @@ $(function() {
     selected: 'images/trash-selected.jpg'
   })
 
-  prepareForSelection("#projects", {
-    default: 'images/folder.png',
-    selected: 'images/folder-selected.jpg'
-  })
-
   prepareForSelection("#readme", {
     default: 'images/text-file.png',
     selected: 'images/text-file-selected.png'
-  })
-
-  prepareForSelection("#link-abra", {
-    default: 'images/link.png',
-    selected: 'images/link-selected.png'
-  })
-
-  prepareForSelection("#link-ceramics", {
-    default: 'images/link.png',
-    selected: 'images/link-selected.png'
   })
 
   prepareForSelection("#resume", {
     default: 'images/resume.png',
     selected: 'images/resume-selected.png'
   })
+
+  prepareForSelection("#projects", {
+    default: 'images/folder.png',
+    selected: 'images/folder-selected.jpg'
+  })
+
+  var projectLinks = ['#link-abra', '#link-ceramics', '#link-patterns', '#link-exercism', '#link-cubes'];
+  for (var i = 0; i < projectLinks.length; i++) {
+    prepareForSelection(projectLinks[i], {
+      default: 'images/link.png',
+      selected: 'images/link-selected.png'
+    })
+  }
 
   /* used to keep most recently clicked window on top */
   let zIndex = 1;
@@ -137,7 +138,7 @@ $(function() {
     zIndex++;
   }
 
-  $("#my-computer").on("dblclick", function(event) {
+  $("#my-computer").on(dblClickMobile, function(event) {
     $("#error").css({
       'top': event.clientY,
       'left': event.clientX + 60,
@@ -146,7 +147,7 @@ $(function() {
     openErrorWindow("My Computer")
   })
 
-  $("#trash").on("dblclick", function(event) {
+  $("#trash").on(dblClickMobile, function(event) {
     $("#error").css({
       'top': event.clientY,
       'left': event.clientX + 60,
@@ -157,8 +158,9 @@ $(function() {
 
   $("#start-button").on("click", function() {
     $("#error").css({
-      'top': event.clientY,
-      'left': event.clientX + 60,
+      'top': 'auto',
+      'bottom': 32,
+      'left': 0,
       'zIndex': zIndex
     })
     openErrorWindow("Start")
@@ -180,7 +182,7 @@ $(function() {
   })
 
 
-  $("#readme").on("dblclick", function() {
+  $("#readme").on(dblClickMobile, function() {
     $("#readme-document").css({
       'top': event.clientY,
       'left': event.clientX + 60,
@@ -194,12 +196,14 @@ $(function() {
     $("#readme-document").hide()
   })
 
-  $("#projects").on("dblclick", function() {
+  $("#projects").on(dblClickMobile, function() {
     $("#projects-folder").css({
-      'top': event.clientY,
+      'top': 'auto',
       'left': event.clientX + 60,
+      'bottom': event.clientX,
       'zIndex': zIndex
     })
+    console.log(event.clientY)
     $("#projects-folder").show()
     zIndex++;
   })
@@ -209,12 +213,12 @@ $(function() {
   })
 
   /*
-  $("#link-abra").on("dblclick", function() {
+  $("#link-abra").on(dblClickMobile, function() {
       window.open('abra.jacobjanak.com', '_blank');
   })
   */
 
-  $("#link-ceramics").on("dblclick", function() {
+  $("#link-ceramics").on(dblClickMobile, function() {
       window.open('https://www.monikavitekceramics.herokuapp.com', '_blank');
   })
 

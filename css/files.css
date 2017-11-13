@@ -140,6 +140,10 @@ ul.document-menu li {
   background-color: white;
   color: black;
 }
+.folder-contents > a > .icon {
+  display: inline-block;
+  vertical-align: bottom;
+}
 .folder-bottom-bar {
   height: 24px;
 }

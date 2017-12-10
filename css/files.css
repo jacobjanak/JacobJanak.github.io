@@ -1,3 +1,5 @@
+/* STUFF THAT ALL WINDOWS NEED */
+
 .border-1 {
   width: calc(100% - 2px);
   height: calc(100% - 2px);
@@ -40,8 +42,6 @@
   width: 100%;
   height: 20px;
   background-color: #0311A3;
-}
-.blue-stripe:hover {
   cursor: pointer;
 }
 .document-logo {
@@ -62,8 +62,6 @@
   margin: 2px;
   height: calc(100% - 4px);
   width: auto;
-}
-.x-button:hover {
   cursor: pointer;
 }
 ul.document-menu {
@@ -76,6 +74,11 @@ ul.document-menu li {
   margin-right: 12px;
   color: black;
 }
+
+/* END STUFF THAT ALL WINDOWS NEED */
+
+
+
 #readme-textarea {
   border: none;
   width: calc(100% - 4px);
@@ -85,7 +88,10 @@ ul.document-menu li {
   font-size: 14px;
 }
 
-/* Error Window */
+
+
+/* ERROR WINDOW */
+
 #error {
   height: 160px;
   width: 194px;
@@ -129,7 +135,12 @@ ul.document-menu li {
   margin-right: 8px;
 }
 
-/* Folder */
+/* END ERROR */
+
+
+
+/* FOLDERS */
+
 #projects-folder > .border-1 > .border-2 > .border-3 > .border-4 {
   height: 224px;
 }
@@ -168,3 +179,5 @@ ul.document-menu li {
 .byte-count {
   width: 80px;
 }
+
+/* END FOLDERS */

@@ -19,8 +19,7 @@ $(function() {
   }
   updateClock()
 
-
-  /* NOTE: remake these with jQuery */
+  /* Drag and drop functionality */
 
   function dragStart(event) {
   	var eleWidth = $(event.target).width();
@@ -60,6 +59,10 @@ $(function() {
   document.body.addEventListener('dragover', dragOver, false);
   document.body.addEventListener('drop', drop, false);
 
+  /* End Drag and drop functionality */
+
+  /* selection and deselection refers to when you click an icon
+    and it looks blue and so does the text */
 
   function prepareForSelection(id, img) {
     $(id).on("click", function() {
@@ -125,12 +128,13 @@ $(function() {
 
   /* used to keep most recently clicked window on top */
   let zIndex = 1;
-
   $(".window").on("click", function() {
     $(this).css({'zIndex': zIndex})
     zIndex++;
   })
 
+  /* error window opens whenever user clicks something
+    that I haven't added functionality to */
   function openErrorWindow(filename) {
     $("#error-title").text(filename)
     $("#error-text").text(filename + " is not accessible")
@@ -181,7 +185,6 @@ $(function() {
     }, 250)
   })
 
-
   $("#readme").on(dblClickMobile, function() {
     $("#readme-document").css({
       'top': event.clientY,
@@ -203,7 +206,6 @@ $(function() {
       'bottom': event.clientX,
       'zIndex': zIndex
     })
-    console.log(event.clientY)
     $("#projects-folder").show()
     zIndex++;
   })
@@ -212,16 +214,7 @@ $(function() {
     $("#projects-folder").hide()
   })
 
-  /*
-  $("#link-abra").on(dblClickMobile, function() {
-      window.open('abra.jacobjanak.com', '_blank');
-  })
-  */
-
-  $("#link-ceramics").on(dblClickMobile, function() {
-      window.open('https://www.monikavitekceramics.herokuapp.com', '_blank');
-  })
-
+  /* this plays the startup sound on page load */
   $("#startup-sound").get(0).play();
 
 })

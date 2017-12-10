@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+    <meta name="description" content="The personal portfolio website of Jacob Janak.">
+    <meta name="author" content="Jacob Janak">
+    <title>Jacob Janak - Portfolio</title>
+    <!-- Tab Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="icon" href="https://market.enonic.com/vendors/selbekk/io.selbekk.favicon/_/attachment/inline/51f8d6ef-c7db-47bd-aa5d-8a6e3da1d67e:2df7625fb6fd508cb0874730d8f812d52670aff1/favicon_cleaned.svg">
     <title>Jacob Janak</title>
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/files.css" />
 </head>
 <body>
+
+  <!-- Desktop Icons -->
 
   <div class="icon">
     <img id="my-computer" src="images/my-computer.jpg" alt="my computer" />
@@ -32,6 +44,10 @@
     <img id="projects" class="folder" src="images/folder.png" alt="folder" />
     <p><span>Jake's Projects</span></p>
   </div>
+
+  <!-- End Desktop Icons -->
+
+  <!-- Windows -->
 
   <div id="projects-folder" class="window drag" draggable="true" data-item="0">
     <div class="border-1">
@@ -96,10 +112,10 @@
 
           <div class="folder-bottom-bar">
             <div class="item-count">
-              2 object(s)
+              5 object(s)
             </div>
             <div class="byte-count">
-              8 bytes
+              20 bytes
             </div>
           </div>
 
@@ -170,6 +186,9 @@ On this page, you can find links to my other projects in a folder called 'Jake's
     </div>
   </div>
 
+  <!-- End Windows -->
+
+  <!-- Dock -->
   <div id="dock">
     <img id="start-button" src="images/start-button.jpg" alt="start button" />
     <div id="clock">
@@ -178,8 +197,10 @@ On this page, you can find links to my other projects in a folder called 'Jake's
     </div>
   </div>
 
+  <!-- Audio that plays on page load -->
   <audio id="startup-sound" src="startup.mp3"></audio>
 
+  <!-- Scripts -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/script.js"></script>
 </body>

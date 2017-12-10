@@ -1,13 +1,15 @@
+/* NORMALIZING */
+
 body {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100%; /* no scrollbars ever */
+  max-height: 100%; /* no scrollbars ever */
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* no scrollbars ever */
   padding-top: 12px;
   background-color: #4DAAA9;
 
-  /* Font */
+  /* Font - looks a bit blocky like the original 95 text */
   font-family: Arial, Helvetica, sans-serif;
   font-smooth: never;
   -webkit-font-smoothing: none;
@@ -19,9 +21,11 @@ p {
 }
 a, a:hover, a:active {
   text-decoration: none;
-  color: inherit;
+  color: inherit; /* removes ugly blue color */
 }
 img {
+  /* make images non-draggable because there's windows with drag functionality
+    and this might be confusing if images drag for no reason */
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
@@ -29,7 +33,12 @@ img {
   user-drag: none;
 }
 
-/* Desktop icons */
+/* END NORMALIZING */
+
+
+
+/* DESKTOP ICONS */
+
 .icon {
   display: block;
   margin-left: 12px;
@@ -55,48 +64,51 @@ p.selected > span {
   color: white;
   border: 1px dotted white;
 }
-
 .folder, .text-file {
-  /* these images appear wider than the others */
+  /* these images appear wider than the others so lets shrink them */
   margin-left: 28px !important;
   width: 44px !important;
 }
 
-/* Windows */
+/* END DESKTOP ICONS */
+
+
+
+/* WINDOWS */
+
 .window {
   display: none;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  /* transform: translate(-50%, -50%); */
+  left: 50%; /* gets overwritten by JS */
+  top: 50%; /* gets overwritten by JS */
   width: 500px;
   height: 300px;
   background-color: white;
 }
-/* ... rest is in seperate files for cleanliness */
+
+/* END WINDOWS - rest is in files.css because it's very long */
 
 
-/* Dock (bottom bar) */
+
+/* DOCK */
+
 #dock {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 30px; /* 150% regular size */
-  width: 100%; /* right: 0 doesn't do the trick on mobile */
+  height: 30px;
   padding: 2px 4px; /* most browsers have rounded corners */
-  background-color: #C3C7CB; /* C3C3C3 */
+  background-color: #C3C7CB;
   border-top: 2px solid white;
-  z-index: 10000;
+  z-index: 10000; /* needs to be a very large number because of JS */
 }
 #start-button {
   height: 100%;
   width: auto;
-}
-#start-button:hover {
   cursor: pointer;
 }
-#clock {
+#clock { /* clock contains the time and the volume button */
   height: 26px; /* same as calc(100% - padding) */
   float: right;
   width: 72px;
@@ -117,3 +129,5 @@ p.selected > span {
   color: black;
   font-size: 14px;
 }
+
+/* END DOCK */

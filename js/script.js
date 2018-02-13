@@ -1,5 +1,12 @@
 $(function() {
 
+  // display readme when page loads
+  $('#readme-document').css({
+    'top': 'calc(50% - ' + $('#readme-document').height() / 2 + 'px)',
+    'left': 'calc(50% - ' + $('#readme-document').width() / 2 + 'px)'
+  })
+  $('#readme-document').show()
+
   /* var to determine if user can double click or not */
   var dblClickMobile = screen.width > 900 ? 'dblclick' : 'click';
 

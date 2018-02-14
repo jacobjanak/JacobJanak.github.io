@@ -221,7 +221,32 @@ $(function() {
     $("#projects-folder").hide()
   })
 
-  /* this plays the startup sound on page load */
+  // this plays the startup sound on page load
   $("#startup-sound").get(0).play();
+
+  /*
+    using Firebase to keep track of how many web visitors I have
+  */
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDULs3fzDFfoyJ4n5jJoaXcKPLVUNkaaMw",
+    authDomain: "portfolio-dc1ef.firebaseapp.com",
+    databaseURL: "https://portfolio-dc1ef.firebaseio.com",
+    projectId: "portfolio-dc1ef",
+    storageBucket: "",
+    messagingSenderId: "980436640009"
+  };
+  firebase.initializeApp(config);
+
+  var dbVisitors = firebase.database().ref().child('visitors');
+
+  dbVisitors.once('value', function(snap, err) {
+    // Check if firebase has starting data
+    var oldCount = snap.child('count').val();
+    if (typeof oldCount === 'number') {
+      dbVisitors.set({ 'count': oldCount + 1 })
+    }
+  })
 
 })
